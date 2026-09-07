@@ -242,7 +242,7 @@
 </section>
 
 <section class="cta" id="download">
-  <a class="download-btn" href="versions/latest/Lotus.Installer.exe" download>
+  <a class="download-btn" id="download-btn" href="versions/latest/Lotus.Installer.exe" download>
     <img src="assets/icon.ico" alt="">
     Download for Windows
   </a>
@@ -290,5 +290,16 @@
   Lotus created with ❤ by Allen Lambert Jr
 </footer>
 
+
+<script>
+  // Let the browser start the .exe download (native `download` attribute
+  // behavior), then carry the visitor to the thank-you page where the
+  // lotus blooms.
+  document.getElementById('download-btn').addEventListener('click', function () {
+    window.setTimeout(function () {
+      window.location.href = 'thank-you.html';
+    }, 600);
+  });
+</script>
 </body>
 </html>

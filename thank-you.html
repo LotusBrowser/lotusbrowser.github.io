@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank you - Lotus</title>
+<link rel="icon" href="assets/icon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBE1E8;
+    --chrome: #F3C7D3;
+    --chrome-dark: #ECB9C8;
+    --card: #FFF6F8;
+    --rose: #A73556;
+    --rose-deep: #8A2946;
+    --plum: #5C2436;
+    --plum-soft: #8B5568;
+    --petal-light: #FFA6B1;
+    --petal-medium: #FF96A0;
+    --petal-coral: #FF828C;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--plum);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition: none !important; }
+  }
+
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- top bar ---------- */
+  header.site{ padding: 28px 0 0; }
+  .site-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--rose-deep);
+    text-decoration: none;
+  }
+  .wordmark img{ width: 22px; height: 22px; }
+  .nav-link{
+    color: var(--plum-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-link:hover{ color: var(--rose-deep); }
+
+  /* ---------- bloom hero ---------- */
+  .thanks-hero{
+    text-align: center;
+    padding: 48px 0 40px;
+  }
+
+  .bloom-stage{
+    width: 260px;
+    height: 260px;
+    margin: 0 auto 8px;
+    position: relative;
+  }
+
+  .bloom-stage svg{
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    filter: drop-shadow(0 18px 30px rgba(255, 130, 140, 0.35));
+  }
+
+  /* every petal group animates in from a small, folded bud at the flower's
+     center out to its resting position/size - the "bloom" */
+  .petal-group{
+    transform-origin: 256px 258px;
+    transform-box: view-box;
+    opacity: 0;
+    transform: scale(0.1) rotate(-18deg);
+    animation: bloom-open 1.05s cubic-bezier(0.34, 1.35, 0.4, 1) forwards;
+  }
+
+  @keyframes bloom-open{
+    0%   { opacity: 0; transform: scale(0.1) rotate(-18deg); }
+    55%  { opacity: 1; }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+  }
+
+  .petal-center     { animation-delay: 0.05s; }
+  .petal-inner      { animation-delay: 0.22s; }
+  .petal-side       { animation-delay: 0.40s; }
+  .petal-top        { animation-delay: 0.58s; }
+  .petal-bottom     { animation-delay: 0.58s; }
+  .petal-wide       { animation-delay: 0.78s; }
+
+  /* gentle idle sway once the flower has finished opening */
+  .lotus-svg{
+    animation: sway 5s ease-in-out 1.9s infinite;
+    transform-origin: 256px 400px;
+  }
+  @keyframes sway{
+    0%, 100% { transform: rotate(0deg); }
+    50%      { transform: rotate(1.2deg); }
+  }
+
+  /* soft petals drifting down behind the flower */
+  .petal-fall{
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+  }
+  .petal-fall span{
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 14px;
+    background: var(--petal-light);
+    border-radius: 60% 10% 60% 10%;
+    opacity: 0;
+    animation: fall 3.6s ease-in 2.1s infinite;
+  }
+  .petal-fall span:nth-child(1){ left: 14%; animation-delay: 2.1s; }
+  .petal-fall span:nth-child(2){ left: 38%; animation-delay: 2.6s; background: var(--petal-coral); }
+  .petal-fall span:nth-child(3){ left: 62%; animation-delay: 2.3s; background: var(--petal-medium); }
+  .petal-fall span:nth-child(4){ left: 84%; animation-delay: 2.9s; background: var(--petal-coral); }
+  @keyframes fall{
+    0%   { transform: translateY(0) rotate(0deg); opacity: 0; }
+    10%  { opacity: 0.85; }
+    100% { transform: translateY(280px) rotate(220deg); opacity: 0; }
+  }
+
+  .thanks-hero h1{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(30px, 4.6vw, 44px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    color: var(--rose-deep);
+    margin: 12px 0 14px;
+    opacity: 0;
+    animation: rise-in 0.7s ease-out 1.75s forwards;
+  }
+  .thanks-hero p.sub{
+    max-width: 460px;
+    margin: 0 auto 28px;
+    color: var(--plum-soft);
+    font-size: 16px;
+    opacity: 0;
+    animation: rise-in 0.7s ease-out 1.95s forwards;
+  }
+  @keyframes rise-in{
+    from{ opacity: 0; transform: translateY(10px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .thanks-actions{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    animation: rise-in 0.7s ease-out 2.1s forwards;
+  }
+
+  .manual-link{
+    color: var(--rose-deep);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--chrome-dark);
+    padding-bottom: 1px;
+  }
+  .manual-link:hover{ color: var(--plum); border-color: var(--rose); }
+
+  .home-link{
+    color: var(--plum-soft);
+    font-size: 13.5px;
+    text-decoration: none;
+  }
+  .home-link:hover{ color: var(--rose-deep); }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top: 1px solid var(--chrome);
+    padding: 26px 0 40px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--plum-soft);
+    margin-top: 40px;
+  }
+  footer a{ color: var(--plum-soft); }
+  footer .legal-links{ margin-bottom: 8px; }
+  footer .legal-links a{ margin: 0 8px; }
+
+  :focus-visible{
+    outline: 2px solid var(--rose-deep);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-nav">
+    <a class="wordmark" href="/">
+      <img src="assets/icon.ico" alt="">
+      Lotus
+    </a>
+    <a class="nav-link" href="/">Home</a>
+  </div>
+</header>
+
+<section class="thanks-hero wrap">
+
+  <div class="bloom-stage">
+    <svg class="lotus-svg" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <g class="petal-group petal-wide">
+        <path fill="var(--petal-medium)" d="M384,286.897H128c-51.787,0-97.939,11.86-128,44.138C30.061,363.311,76.213,384,128,384s97.939-11.861,128-44.138C286.061,372.139,332.213,384,384,384s97.939-20.689,128-52.966C481.94,298.756,435.788,286.897,384,286.897z"/>
+      </g>
+
+      <g class="petal-group petal-bottom">
+        <path fill="var(--petal-coral)" d="M189.37,375.172c-2.521,5.258-3.991,10.68-3.991,16.26c0,25.565,27.584,48.348,70.621,63.188c43.037-14.84,70.621-37.623,70.621-63.188c0-5.4-1.389-10.651-3.756-15.75l-66.869-35.821L189.37,375.172z"/>
+      </g>
+
+      <g class="petal-group petal-side">
+        <path fill="var(--petal-light)" d="M194.207,216.276c-39.988-32.025-95.218-53.686-141.213-52.941c-0.905,42.244,19.834,87.86,60.902,123.57S207.42,340.651,256,339.864"/>
+        <path fill="var(--petal-light)" d="M256,339.864c48.58,0.787,101.037-17.248,142.104-52.959s61.806-81.325,60.902-123.57c-45.364-0.735-101.518,21.783-141.213,52.94"/>
+      </g>
+
+      <g class="petal-group petal-inner">
+        <path fill="var(--petal-medium)" d="M105.952,216.294c-0.669,29.572,14.66,61.505,45.014,86.505c30.354,24.999,69.127,37.624,105.034,37.074l-52.965-88.286C173.479,229.166,139.948,215.772,105.952,216.294z"/>
+        <path fill="var(--petal-medium)" d="M308.966,251.586L256,339.871c35.907,0.552,74.68-12.074,105.034-37.074c30.354-24.999,45.683-56.931,45.014-86.505C372.519,215.779,338.305,229.775,308.966,251.586z"/>
+      </g>
+
+      <g class="petal-group petal-top">
+        <path fill="var(--petal-light)" d="M256,57.379c-37.657,33.171-61.793,84.096-61.793,141.241c0,13.591,1.405,26.815,3.993,39.548h115.601c2.588-12.733,3.992-25.955,3.992-39.548C317.793,141.476,293.657,90.55,256,57.379z"/>
+      </g>
+
+      <g class="petal-group petal-center">
+        <path fill="var(--petal-coral)" d="M194.207,260.414c0,32.143,24.136,60.79,61.793,79.448c37.657-18.658,61.793-47.305,61.793-79.448s-24.136-60.79-61.793-79.448C218.343,199.624,194.207,228.27,194.207,260.414z"/>
+      </g>
+    </svg>
+
+    <div class="petal-fall" aria-hidden="true">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <h1>Thank you for downloading Lotus</h1>
+  <p class="sub">Your download should start automatically. Once it finishes, open the installer and Lotus will walk you through the rest.</p>
+
+  <div class="thanks-actions">
+    <a class="manual-link" href="versions/latest/Lotus.Installer.exe" download>Didn't start? Download again</a>
+    <a class="home-link" href="/">&larr; Back to home</a>
+  </div>
+
+</section>
+
+<footer class="wrap">
+  <div class="legal-links">
+    <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>
+  </div>
+  Lotus created with ❤ by Allen Lambert Jr
+</footer>
+
+</body>
+</html>
