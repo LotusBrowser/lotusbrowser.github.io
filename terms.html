@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service - Lotus</title>
+<link rel="icon" href="assets/icon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBE1E8;
+    --chrome: #F3C7D3;
+    --chrome-dark: #ECB9C8;
+    --card: #FFF6F8;
+    --rose: #A73556;
+    --rose-deep: #8A2946;
+    --plum: #5C2436;
+    --plum-soft: #8B5568;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--plum);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- top bar ---------- */
+  header.site{ padding: 28px 0 0; }
+  .site-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--rose-deep);
+    text-decoration: none;
+  }
+  .wordmark img{ width: 22px; height: 22px; }
+  .nav-link{
+    color: var(--plum-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-link:hover{ color: var(--rose-deep); }
+
+  /* ---------- legal doc ---------- */
+  .doc{
+    padding: 56px 0 40px;
+  }
+  .doc-card{
+    background: var(--card);
+    border-radius: 16px;
+    padding: 44px clamp(24px, 5vw, 56px) 52px;
+    box-shadow: 0 24px 48px -32px rgba(140, 41, 70, 0.35);
+  }
+  .doc h1{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 38px);
+    color: var(--rose-deep);
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .doc .effective{
+    font-size: 13.5px;
+    color: var(--plum-soft);
+    margin: 0 0 36px;
+  }
+  .doc h2{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--rose-deep);
+    margin: 32px 0 10px;
+  }
+  .doc h2:first-of-type{ margin-top: 0; }
+  .doc p{
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: var(--plum);
+  }
+  .doc ul{
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  .doc li{
+    font-size: 15px;
+    color: var(--plum);
+    margin-bottom: 6px;
+  }
+  .doc a{ color: var(--rose-deep); }
+  .doc strong{ color: var(--rose-deep); }
+  .toc{
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 8px;
+    list-style: none;
+  }
+  .toc-title{
+    font-size: 12.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--plum-soft);
+    margin: 0 0 10px;
+  }
+  .toc ol{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .toc li{
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .toc a{ color: var(--plum); text-decoration: none; }
+  .toc a:hover{ color: var(--rose-deep); text-decoration: underline; }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top: 1px solid var(--chrome);
+    padding: 26px 0 40px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--plum-soft);
+  }
+  footer a{ color: var(--plum-soft); }
+  footer .legal-links{ margin-bottom: 8px; }
+  footer .legal-links a{ margin: 0 8px; }
+
+  :focus-visible{
+    outline: 2px solid var(--rose-deep);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-nav">
+    <a class="wordmark" href="/">
+      <img src="assets/icon.ico" alt="">
+      Lotus
+    </a>
+    <a class="nav-link" href="/#download">Download</a>
+  </div>
+</header>
+
+<section class="wrap doc">
+  <div class="doc-card">
+    <h1>Terms of Service</h1>
+    <p class="effective">Last updated: September 7, 2026</p>
+
+    <p>These Terms of Service ("Terms") govern your download and use of Lotus (the "Software"), a desktop web browser for Windows made available from this website (the "Site"). By downloading, installing, or using Lotus, you agree to these Terms. If you do not agree, do not download or use the Software.</p>
+
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#license">1. License to use Lotus</a></li>
+        <li><a href="#eligibility">2. Eligibility</a></li>
+        <li><a href="#acceptable-use">3. Acceptable use</a></li>
+        <li><a href="#third-party">4. Third-party services</a></li>
+        <li><a href="#updates">5. Updates and availability</a></li>
+        <li><a href="#ip">6. Intellectual property</a></li>
+        <li><a href="#disclaimer">7. Disclaimer of warranties</a></li>
+        <li><a href="#liability">8. Limitation of liability</a></li>
+        <li><a href="#termination">9. Termination</a></li>
+        <li><a href="#changes">10. Changes to these Terms</a></li>
+        <li><a href="#law">11. Governing law</a></li>
+        <li><a href="#contact">12. Contact</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="license">1. License to use Lotus</h2>
+    <p>Lotus is provided to you free of charge. Subject to your compliance with these Terms, we grant you a personal, non-exclusive, non-transferable, revocable license to download, install, and use the Software on devices you own or control, for your own personal or internal business use.</p>
+    <p>This license does not permit you to resell, sublicense, rent, or otherwise commercially distribute the Software, or to reverse engineer, decompile, or disassemble it except to the extent such restriction is prohibited by applicable law.</p>
+
+    <h2 id="eligibility">2. Eligibility</h2>
+    <p>You must be at least 13 years old, or the minimum age of digital consent in your jurisdiction, to download or use Lotus. If you are under the age of majority where you live, you may only use the Software with the involvement and consent of a parent or legal guardian.</p>
+
+    <h2 id="acceptable-use">3. Acceptable use</h2>
+    <p>When using Lotus, you agree not to:</p>
+    <ul>
+      <li>Use the Software for any unlawful purpose or in violation of any applicable local, state, national, or international law;</li>
+      <li>Attempt to gain unauthorized access to the Software's underlying code, our servers, or any related systems;</li>
+      <li>Distribute the installer or any modified version of Lotus in a way that suggests it is officially provided by us, without our written permission;</li>
+      <li>Use the Software to transmit malware, or to interfere with the security or normal operation of any device, network, or service.</li>
+    </ul>
+
+    <h2 id="third-party">4. Third-party services</h2>
+    <p>Lotus's address bar and new tab search are powered by DuckDuckGo. Your use of DuckDuckGo's search service is subject to DuckDuckGo's own terms and privacy practices, which we do not control. Any website you visit using Lotus is likewise governed by that website's own terms and policies. We are not responsible for the content, availability, or practices of third-party sites or services accessed through the Software.</p>
+
+    <h2 id="updates">5. Updates and availability</h2>
+    <p>We may release updated versions of Lotus from time to time, which may add, change, or remove features. We do not guarantee that any particular version of the Software, or the Software itself, will remain available indefinitely, and we may modify or discontinue the Software, or this Site, at any time without liability to you.</p>
+
+    <h2 id="ip">6. Intellectual property</h2>
+    <p>Lotus, including its name, logo, design, and underlying code, is the property of its creator and is protected by applicable intellectual property laws. Except for the limited license granted in Section 1, nothing in these Terms transfers any ownership rights to you.</p>
+
+    <h2 id="disclaimer">7. Disclaimer of warranties</h2>
+    <p>The Software is provided "as is" and "as available," without warranties of any kind, whether express, implied, or statutory, including but not limited to implied warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Software will be uninterrupted, error-free, or completely secure.</p>
+
+    <h2 id="liability">8. Limitation of liability</h2>
+    <p>To the fullest extent permitted by law, we will not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, profits, or revenue, arising out of or related to your use of, or inability to use, the Software, even if we have been advised of the possibility of such damages.</p>
+
+    <h2 id="termination">9. Termination</h2>
+    <p>These Terms remain in effect until terminated. We may suspend or terminate your license to use Lotus at any time if you fail to comply with these Terms. You may terminate this agreement at any time by uninstalling the Software and ceasing all use of it.</p>
+
+    <h2 id="changes">10. Changes to these Terms</h2>
+    <p>We may update these Terms from time to time. If we make material changes, we will update the "Last updated" date at the top of this page. Your continued use of Lotus after changes take effect constitutes acceptance of the revised Terms.</p>
+
+    <h2 id="law">11. Governing law</h2>
+    <p>These Terms are governed by the laws of the jurisdiction in which the Software's creator resides, without regard to conflict-of-law principles, unless otherwise required by mandatory consumer protection laws applicable to you.</p>
+
+    <h2 id="contact">12. Contact</h2>
+    <p>Questions about these Terms can be sent to <a href="mailto:staydrifting@voltaccept.com">staydrifting@voltaccept.com</a>.</p>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="legal-links">
+    <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>
+  </div>
+  Lotus created with ❤ by Allen Lambert Jr
+</footer>
+
+</body>
+</html>

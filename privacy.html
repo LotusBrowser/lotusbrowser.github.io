@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy - Lotus</title>
+<link rel="icon" href="assets/icon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #FBE1E8;
+    --chrome: #F3C7D3;
+    --chrome-dark: #ECB9C8;
+    --card: #FFF6F8;
+    --rose: #A73556;
+    --rose-deep: #8A2946;
+    --plum: #5C2436;
+    --plum-soft: #8B5568;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--plum);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+
+  .wrap{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ---------- top bar ---------- */
+  header.site{ padding: 28px 0 0; }
+  .site-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .wordmark{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--rose-deep);
+    text-decoration: none;
+  }
+  .wordmark img{ width: 22px; height: 22px; }
+  .nav-link{
+    color: var(--plum-soft);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .nav-link:hover{ color: var(--rose-deep); }
+
+  /* ---------- legal doc ---------- */
+  .doc{
+    padding: 56px 0 40px;
+  }
+  .doc-card{
+    background: var(--card);
+    border-radius: 16px;
+    padding: 44px clamp(24px, 5vw, 56px) 52px;
+    box-shadow: 0 24px 48px -32px rgba(140, 41, 70, 0.35);
+  }
+  .doc h1{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: clamp(28px, 4vw, 38px);
+    color: var(--rose-deep);
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  .doc .effective{
+    font-size: 13.5px;
+    color: var(--plum-soft);
+    margin: 0 0 36px;
+  }
+  .doc h2{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: var(--rose-deep);
+    margin: 32px 0 10px;
+  }
+  .doc h2:first-of-type{ margin-top: 0; }
+  .doc p{
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: var(--plum);
+  }
+  .doc ul{
+    margin: 0 0 14px;
+    padding-left: 22px;
+  }
+  .doc li{
+    font-size: 15px;
+    color: var(--plum);
+    margin-bottom: 6px;
+  }
+  .doc a{ color: var(--rose-deep); }
+  .doc strong{ color: var(--rose-deep); }
+  .table-wrap{ overflow-x: auto; margin: 0 0 20px; }
+  table.data-table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--bg);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  table.data-table th, table.data-table td{
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--chrome);
+    vertical-align: top;
+  }
+  table.data-table th{
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    color: var(--rose-deep);
+    background: var(--chrome);
+  }
+  table.data-table tr:last-child td{ border-bottom: none; }
+  .toc{
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin-bottom: 8px;
+    list-style: none;
+  }
+  .toc-title{
+    font-size: 12.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--plum-soft);
+    margin: 0 0 10px;
+  }
+  .toc ol{
+    margin: 0;
+    padding-left: 18px;
+  }
+  .toc li{
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .toc a{ color: var(--plum); text-decoration: none; }
+  .toc a:hover{ color: var(--rose-deep); text-decoration: underline; }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top: 1px solid var(--chrome);
+    padding: 26px 0 40px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--plum-soft);
+  }
+  footer a{ color: var(--plum-soft); }
+  footer .legal-links{ margin-bottom: 8px; }
+  footer .legal-links a{ margin: 0 8px; }
+
+  :focus-visible{
+    outline: 2px solid var(--rose-deep);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap site-nav">
+    <a class="wordmark" href="/">
+      <img src="assets/icon.ico" alt="">
+      Lotus
+    </a>
+    <a class="nav-link" href="/#download">Download</a>
+  </div>
+</header>
+
+<section class="wrap doc">
+  <div class="doc-card">
+    <h1>Privacy Policy</h1>
+    <p class="effective">Last updated: September 7, 2026</p>
+
+    <p>This Privacy Policy explains how information is collected, used, and shared in connection with Lotus (the "Software") and this download website (the "Site"). Lotus is built around the idea that your browsing is your own business, so we've tried to keep our data collection to the minimum needed to make the Software work.</p>
+
+    <nav class="toc" aria-label="Table of contents">
+      <p class="toc-title">On this page</p>
+      <ol>
+        <li><a href="#overview">1. Overview</a></li>
+        <li><a href="#site-data">2. Information collected by this website</a></li>
+        <li><a href="#browser-data">3. Information collected by Lotus</a></li>
+        <li><a href="#local-data">4. Data that stays on your device</a></li>
+        <li><a href="#third-party">5. Third-party services (DuckDuckGo &amp; websites you visit)</a></li>
+        <li><a href="#sharing">6. How we share information</a></li>
+        <li><a href="#security">7. Data security</a></li>
+        <li><a href="#retention">8. Data retention</a></li>
+        <li><a href="#children">9. Children's privacy</a></li>
+        <li><a href="#rights">10. Your choices and rights</a></li>
+        <li><a href="#changes">11. Changes to this policy</a></li>
+        <li><a href="#contact">12. Contact</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="overview">1. Overview</h2>
+    <p>Lotus is a locally-installed desktop browser. Most of what it does — rendering pages, storing your tabs, bookmarks, history, and downloads — happens entirely on your own device and is never sent to us. The sections below break down the limited exceptions to that.</p>
+
+    <h2 id="site-data">2. Information collected by this website</h2>
+    <p>When you visit this Site to download Lotus, our web host may automatically log standard technical information, such as your IP address, browser type, operating system, referring page, and the pages you view, for the purpose of operating the Site and understanding aggregate traffic. This Site does not use advertising trackers or sell any data collected here.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <thead>
+          <tr><th>Data</th><th>Purpose</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>IP address, browser/OS info</td><td>Basic server logs and security (e.g. detecting abuse)</td></tr>
+          <tr><td>Pages visited on this Site</td><td>Understanding which pages get used, in aggregate</td></tr>
+          <tr><td>Download event (file requested)</td><td>Measuring how many times Lotus has been downloaded</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="browser-data">3. Information collected by Lotus</h2>
+    <p>The Lotus application itself does not phone home with your browsing activity. We do not operate analytics or telemetry inside the Software that reports which sites you visit, what you search for, or what you download through the browser. If a future version of Lotus introduces optional crash reporting or update checks, that data will be limited to technical diagnostic information (such as app version and crash details) and will be described in an update to this policy before it is enabled.</p>
+
+    <h2 id="local-data">4. Data that stays on your device</h2>
+    <p>Lotus stores the following information locally, on your own computer, in the same way most browsers do:</p>
+    <ul>
+      <li>Bookmarks and the bookmarks bar</li>
+      <li>Browsing history</li>
+      <li>Downloads shelf history</li>
+      <li>Settings, such as tracker blocking, HTTPS-only mode, and pop-up blocking preferences</li>
+      <li>Cookies and site data set by the websites you visit</li>
+    </ul>
+    <p>This local data is not transmitted to us. You can clear it at any time from within Lotus's settings.</p>
+
+    <h2 id="third-party">5. Third-party services (DuckDuckGo &amp; websites you visit)</h2>
+    <p>The address bar and new tab search in Lotus are powered by DuckDuckGo. Searches you run are sent to DuckDuckGo in order to return results, subject to DuckDuckGo's own privacy policy, which we encourage you to review. Any website you navigate to in Lotus is operated independently of us and has its own privacy practices and cookies; we have no access to your activity on those sites.</p>
+
+    <h2 id="sharing">6. How we share information</h2>
+    <p>We do not sell personal information. We may share the limited server-log data described in Section 2 with service providers who host this Site (for example, our hosting or CDN provider), solely to operate and secure the Site, or if required to comply with a legal obligation such as a valid subpoena.</p>
+
+    <h2 id="security">7. Data security</h2>
+    <p>We take reasonable measures to protect the limited data described in this policy, including serving downloads over HTTPS. However, no method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>
+
+    <h2 id="retention">8. Data retention</h2>
+    <p>Server logs described in Section 2 are retained only as long as necessary for the purposes described above and are periodically deleted or aggregated. Data stored locally by Lotus on your device (Section 4) is retained until you delete it or uninstall the Software.</p>
+
+    <h2 id="children">9. Children's privacy</h2>
+    <p>This Site and the Software are not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us so we can remove it.</p>
+
+    <h2 id="rights">10. Your choices and rights</h2>
+    <p>Depending on where you live, you may have rights to access, correct, or delete personal information we hold about you, or to object to certain processing. Because we collect very little identifiable information in the first place, most of your browsing data (history, bookmarks, cookies) is already entirely in your control locally within Lotus's settings. For anything else, you can reach us using the contact details below.</p>
+
+    <h2 id="changes">11. Changes to this policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in the Software, the Site, or applicable law. We will update the "Last updated" date above when we do, and material changes will be noted on this page.</p>
+
+    <h2 id="contact">12. Contact</h2>
+    <p>Questions about this Privacy Policy, or requests relating to your data, can be sent to <a href="mailto:staydrifting@voltaccept.com">staydrifting@voltaccept.com</a>.</p>
+  </div>
+</section>
+
+<footer class="wrap">
+  <div class="legal-links">
+    <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>
+  </div>
+  Lotus created with ❤ by Allen Lambert Jr
+</footer>
+
+</body>
+</html>
