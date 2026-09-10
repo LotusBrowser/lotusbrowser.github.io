@@ -1,305 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lotus - a calmer way to browse</title>
-<link rel="icon" href="assets/icon.ico" type="image/x-icon">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg: #FBE1E8;
-    --chrome: #F3C7D3;
-    --chrome-dark: #ECB9C8;
-    --card: #FFF6F8;
-    --rose: #A73556;
-    --rose-deep: #8A2946;
-    --plum: #5C2436;
-    --plum-soft: #8B5568;
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lotus - a calmer way to browse</title>
+  <link rel="icon" href="assets/icon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #FBE1E8;
+      --chrome: #F3C7D3;
+      --chrome-dark: #ECB9C8;
+      --card: #FFF6F8;
+      --rose: #A73556;
+      --rose-deep: #8A2946;
+      --plum: #5C2436;
+      --plum-soft: #8B5568;
+    }
 
-  *{ box-sizing: border-box; }
-  html{ scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+    }
 
-  body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--plum);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-  }
+    html {
+      scroll-behavior: smooth;
+    }
 
-  @media (prefers-reduced-motion: reduce){
-    *{ animation: none !important; transition: none !important; }
-  }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--plum);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
 
-  .wrap{
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
 
-  /* ---------- top bar ---------- */
-  header.site{ padding: 28px 0 0; }
-  .site-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .wordmark{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: "Fraunces", serif;
-    font-weight: 600;
-    font-size: 20px;
-    color: var(--rose-deep);
-  }
-  .wordmark img{ width: 22px; height: 22px; }
-  .nav-link{
-    color: var(--plum-soft);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .nav-link:hover{ color: var(--rose-deep); }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-  /* ---------- hero ---------- */
-  .hero{
-    text-align: center;
-    padding: 60px 0 8px;
-  }
-  .hero h1{
-    font-family: "Fraunces", serif;
-    font-weight: 500;
-    font-size: clamp(34px, 5vw, 52px);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-    color: var(--rose-deep);
-    margin: 0 0 16px;
-  }
-  .hero p.sub{
-    max-width: 480px;
-    margin: 0 auto 36px;
-    color: var(--plum-soft);
-    font-size: 17px;
-  }
+    /* ---------- top bar ---------- */
+    header.site {
+      padding: 28px 0 0;
+    }
 
-  /* ---------- screenshots (photo stack) ---------- */
-  .screenshot-stack{
-    position: relative;
-    width: 100%;
-    max-width: 560px;
-    height: 340px;
-    margin: 0 auto;
-  }
-  .screenshot-frame{
-    position: absolute;
-    width: 480px;
-    height: 333px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 24px 48px -24px rgba(140, 41, 70, 0.4);
-    border: 6px solid var(--card);
-    background: var(--card);
-  }
-  .screenshot-frame img{
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-  }
-  .screenshot-frame.back{
-    top: 6px;
-    left: 50px;
-    transform: rotate(-6deg);
-    z-index: 1;
-  }
-  .screenshot-frame.front{
-    top: 0;
-    left: 10px;
-    transform: rotate(4deg);
-    z-index: 2;
-  }
-  .screenshot-caption{
-    margin: 24px 0 0;
-    font-size: 12.5px;
-    color: var(--plum-soft);
-    text-align: center;
-  }
-  @media (max-width: 600px){
-    .screenshot-stack{ height: 280px; }
-    .screenshot-frame{ width: 88vw; max-width: 380px; height: auto; aspect-ratio: 882/612; }
-    .screenshot-frame.back{ left: 6vw; }
-    .screenshot-frame.front{ left: 2vw; }
-  }
+    .site-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-  /* ---------- download CTA ---------- */
-  .cta{
-    text-align: center;
-    padding: 44px 0 8px;
-  }
-  .download-btn{
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--rose-deep);
-    color: var(--card);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 15px 30px;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  .download-btn:hover{
-    transform: translateY(-1px);
-    box-shadow: 0 18px 32px -14px rgba(138, 41, 70, 0.6);
-  }
-  .download-btn img{ width: 18px; height: 18px; }
-  .fine-print{
-    margin-top: 14px;
-    font-size: 13px;
-    color: var(--plum-soft);
-  }
-  .fine-print a{ color: var(--rose-deep); }
+    .wordmark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Fraunces", serif;
+      font-weight: 600;
+      font-size: 20px;
+      color: var(--rose-deep);
+    }
 
-  /* ---------- features ---------- */
-  .features{
-    padding: 90px 0 60px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px 36px;
-  }
-  .feature h3{
-    font-family: "Fraunces", serif;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--rose-deep);
-    margin: 0 0 8px;
-  }
-  .feature p{
-    margin: 0;
-    font-size: 14px;
-    color: var(--plum-soft);
-  }
-  .feature .icon{
-    width: 30px;
-    height: 30px;
-    margin-bottom: 14px;
-    color: var(--rose);
-  }
+    .wordmark img {
+      width: 22px;
+      height: 22px;
+    }
 
-  @media (max-width: 680px){
-    .features{ grid-template-columns: 1fr; gap: 30px; }
-  }
+    .nav-link {
+      color: var(--plum-soft);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+    }
 
-  /* ---------- footer ---------- */
-  footer{
-    border-top: 1px solid var(--chrome);
-    padding: 26px 0 40px;
-    text-align: center;
-    font-size: 13px;
-    color: var(--plum-soft);
-  }
-  footer a{ color: var(--plum-soft); }
-  footer .legal-links{ margin-bottom: 8px; }
-  footer .legal-links a{ margin: 0 8px; }
+    .nav-link:hover {
+      color: var(--rose-deep);
+    }
 
-  :focus-visible{
-    outline: 2px solid var(--rose-deep);
-    outline-offset: 2px;
-  }
-</style>
+    /* ---------- hero ---------- */
+    .hero {
+      text-align: center;
+      padding: 60px 0 8px;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--rose-deep);
+      margin: 0 0 16px;
+    }
+
+    .hero p.sub {
+      max-width: 480px;
+      margin: 0 auto 36px;
+      color: var(--plum-soft);
+      font-size: 17px;
+    }
+
+    /* ---------- screenshots (photo stack) ---------- */
+    .screenshot-stack {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      height: 340px;
+      margin: 0 auto;
+    }
+
+    .screenshot-frame {
+      position: absolute;
+      width: 480px;
+      height: 333px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 24px 48px -24px rgba(140, 41, 70, 0.4);
+      border: 6px solid var(--card);
+      background: var(--card);
+    }
+
+    .screenshot-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .screenshot-frame.back {
+      top: 6px;
+      left: 50px;
+      transform: rotate(-6deg);
+      z-index: 1;
+    }
+
+    .screenshot-frame.front {
+      top: 0;
+      left: 10px;
+      transform: rotate(4deg);
+      z-index: 2;
+    }
+
+    .screenshot-caption {
+      margin: 24px 0 0;
+      font-size: 12.5px;
+      color: var(--plum-soft);
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .screenshot-stack {
+        height: 280px;
+      }
+
+      .screenshot-frame {
+        width: 88vw;
+        max-width: 380px;
+        height: auto;
+        aspect-ratio: 882/612;
+      }
+
+      .screenshot-frame.back {
+        left: 6vw;
+      }
+
+      .screenshot-frame.front {
+        left: 2vw;
+      }
+    }
+
+    /* ---------- download CTA ---------- */
+    .cta {
+      text-align: center;
+      padding: 44px 0 8px;
+    }
+
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--rose-deep);
+      color: var(--card);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      padding: 15px 30px;
+      border-radius: 10px;
+      box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 32px -14px rgba(138, 41, 70, 0.6);
+    }
+
+    .download-btn img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .fine-print {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--plum-soft);
+    }
+
+    .fine-print a {
+      color: var(--rose-deep);
+    }
+
+    /* ---------- features ---------- */
+    .features {
+      padding: 90px 0 60px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px 36px;
+    }
+
+    .feature {
+        background: var(--card);
+        padding: 30px 20px;
+        border-radius: 12px;
+        box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
+    }
+
+    .feature h3 {
+      font-family: "Fraunces", serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--rose-deep);
+      margin: 0 0 8px;
+    }
+
+    .feature p {
+      margin: 0;
+      font-size: 14px;
+      color: var(--plum-soft);
+    }
+
+    .feature .icon {
+      width: 30px;
+      height: 30px;
+      margin-bottom: 14px;
+      color: var(--rose);
+    }
+
+    @media (max-width: 680px) {
+      .features {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 0 60px 40px;
+        text-align: center;
+      }
+
+      .feature p {
+        max-width: 400px;
+        margin: 0 auto;
+        text-align: justify;
+      }
+
+      .feature {
+      }
+    }
+
+    /* ---------- footer ---------- */
+    footer {
+      border-top: 1px solid var(--chrome);
+      padding: 26px 0 40px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--plum-soft);
+    }
+
+    footer a {
+      color: var(--plum-soft);
+    }
+
+    footer .legal-links {
+      margin-bottom: 8px;
+    }
+
+    footer .legal-links a {
+      margin: 0 8px;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--rose-deep);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="site">
-  <div class="wrap site-nav">
-    <div class="wordmark">
+  <header class="site">
+    <div class="wrap site-nav">
+      <div class="wordmark">
+        <img src="assets/icon.ico" alt="">
+        Lotus
+      </div>
+      <a class="nav-link" href="#download">Download</a>
+    </div>
+  </header>
+
+  <section class="hero wrap">
+    <h1>A browser that stays out<br>of your way.</h1>
+    <p class="sub">Lotus is a fast, quiet browser for Windows - tabs, bookmarks and downloads, without the clutter.
+      Searches run on DuckDuckGo, so they aren't tracked back to you.</p>
+
+    <div class="screenshot-stack">
+      <div class="screenshot-frame back">
+        <img src="assets/screenshot-settings.png"
+          alt="Lotus settings page showing bookmarks bar, tracker blocking, HTTPS-only mode and pop-up blocking toggles">
+      </div>
+      <div class="screenshot-frame front">
+        <img src="assets/screenshot-newtab.png" alt="Lotus new tab page with the DuckDuckGo-powered search box">
+      </div>
+    </div>
+    <p class="screenshot-caption">New tab search and privacy settings, both built in</p>
+  </section>
+
+  <section class="cta" id="download">
+    <a class="download-btn" id="download-btn" href="versions/Lotus.Installer.exe" download>
       <img src="assets/icon.ico" alt="">
-      Lotus
+      Download for Windows
+    </a>
+    <p class="fine-print">Free · Windows 10 &amp; 11 · <a href="#">release notes</a></p>
+    <p class="fine-print">By downloading, you agree to the <a href="terms.html">Terms of Service</a> and <a
+        href="privacy.html">Privacy Policy</a>.</p>
+  </section>
+
+  <section class="wrap features">
+    <div class="feature">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <rect x="3" y="6" width="7" height="5" rx="1.5" />
+        <rect x="11" y="6" width="7" height="5" rx="1.5" />
+        <path d="M3 15h18" />
+      </svg>
+      <h3>Tabs that stay organized</h3>
+      <p>Drag to reorder tabs, and every link opens in the window you already have - Lotus never spawns a second copy of
+        itself.</p>
     </div>
-    <a class="nav-link" href="#download">Download</a>
-  </div>
-</header>
-
-<section class="hero wrap">
-  <h1>A browser that stays out<br>of your way.</h1>
-  <p class="sub">Lotus is a fast, quiet browser for Windows - tabs, bookmarks and downloads, without the clutter. Searches run on DuckDuckGo, so they aren't tracked back to you.</p>
-
-  <div class="screenshot-stack">
-    <div class="screenshot-frame back">
-      <img src="assets/screenshot-settings.png" alt="Lotus settings page showing bookmarks bar, tracker blocking, HTTPS-only mode and pop-up blocking toggles">
+    <div class="feature">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z" />
+      </svg>
+      <h3>Search without the tracking</h3>
+      <p>The address bar and new tab page search with DuckDuckGo, and known tracker domains are blocked automatically
+        wherever you browse.</p>
     </div>
-    <div class="screenshot-frame front">
-      <img src="assets/screenshot-newtab.png" alt="Lotus new tab page with the DuckDuckGo-powered search box">
+    <div class="feature">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 3v12" />
+        <path d="M7 10l5 5 5-5" />
+        <path d="M4 19h16" />
+      </svg>
+      <h3>Downloads shelf</h3>
+      <p>Files land in a Chrome-style shelf at the bottom of the window, with live progress instead of a popup.</p>
     </div>
-  </div>
-  <p class="screenshot-caption">New tab search and privacy settings, both built in</p>
-</section>
+    <div class="feature">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z" />
+      </svg>
+      <h3>Bookmarks &amp; history</h3>
+      <p>Star a page to pin it to the bookmarks bar, and jump back to anything you've visited from a searchable history
+        panel.</p>
+    </div>
+    <div class="feature">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="11" cy="11" r="7" />
+        <path d="M21 21l-4.3-4.3" />
+      </svg>
+      <h3>Find in page &amp; zoom</h3>
+      <p>Search text on the current page, zoom in or out, and reach view-source or dev tools when you need them.</p>
+    </div>
+    <div class="feature">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <rect x="3" y="4" width="18" height="14" rx="2" />
+        <path d="M8 21h8M12 18v3" />
+      </svg>
+      <h3>Set it as your default</h3>
+      <p>Register Lotus as a browser option in Windows settings, and it'll ask for permission before a site can use your
+        camera, mic or location.</p>
+    </div>
+  </section>
 
-<section class="cta" id="download">
-  <a class="download-btn" id="download-btn" href="versions/Lotus.Installer.exe" download>
-    <img src="assets/icon.ico" alt="">
-    Download for Windows
-  </a>
-  <p class="fine-print">Free · Windows 10 &amp; 11 · <a href="#">release notes</a></p>
-  <p class="fine-print">By downloading, you agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>.</p>
-</section>
-
-<section class="wrap features">
-  <div class="feature">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="7" height="5" rx="1.5"/><rect x="11" y="6" width="7" height="5" rx="1.5"/><path d="M3 15h18"/></svg>
-    <h3>Tabs that stay organized</h3>
-    <p>Drag to reorder tabs, and every link opens in the window you already have - Lotus never spawns a second copy of itself.</p>
-  </div>
-  <div class="feature">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z"/></svg>
-    <h3>Search without the tracking</h3>
-    <p>The address bar and new tab page search with DuckDuckGo, and known tracker domains are blocked automatically wherever you browse.</p>
-  </div>
-  <div class="feature">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 19h16"/></svg>
-    <h3>Downloads shelf</h3>
-    <p>Files land in a Chrome-style shelf at the bottom of the window, with live progress instead of a popup.</p>
-  </div>
-  <div class="feature">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
-    <h3>Bookmarks &amp; history</h3>
-    <p>Star a page to pin it to the bookmarks bar, and jump back to anything you've visited from a searchable history panel.</p>
-  </div>
-  <div class="feature">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-    <h3>Find in page &amp; zoom</h3>
-    <p>Search text on the current page, zoom in or out, and reach view-source or dev tools when you need them.</p>
-  </div>
-  <div class="feature">
-    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg>
-    <h3>Set it as your default</h3>
-    <p>Register Lotus as a browser option in Windows settings, and it'll ask for permission before a site can use your camera, mic or location.</p>
-  </div>
-</section>
-
-<footer class="wrap">
-  <div class="legal-links">
-    <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>·<a href="https://discord.gg/F8ZHvA9Z5C" target="_blank" rel="noopener">Discord</a>
-  </div>
-  Lotus created with ❤ by Allen Lambert Jr
-</footer>
+  <footer class="wrap">
+    <div class="legal-links">
+      <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>·<a
+        href="https://discord.gg/F8ZHvA9Z5C" target="_blank" rel="noopener">Discord</a>
+    </div>
+    Lotus created with ❤ by Allen Lambert Jr
+  </footer>
 
 
-<script>
-  // Let the browser start the .exe download (native `download` attribute
-  // behavior), then carry the visitor to the thank-you page where the
-  // lotus blooms.
-  document.getElementById('download-btn').addEventListener('click', function () {
-    window.setTimeout(function () {
-      window.location.href = 'thank-you.html';
-    }, 600);
-  });
-</script>
+  <script>
+    // Let the browser start the .exe download (native `download` attribute
+    // behavior), then carry the visitor to the thank-you page where the
+    // lotus blooms.
+    document.getElementById('download-btn').addEventListener('click', function () {
+      window.setTimeout(function () {
+        window.location.href = 'thank-you.html';
+      }, 600);
+    });
+  </script>
 </body>
+
 </html>
