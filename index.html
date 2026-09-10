@@ -139,15 +139,15 @@
 
     .screenshot-frame.back {
       top: 6px;
-      left: 50px;
-      transform: rotate(-6deg);
+      left: 50%;
+      transform: translateX(-50%) rotate(-6deg);
       z-index: 1;
     }
 
     .screenshot-frame.front {
       top: 0;
-      left: 10px;
-      transform: rotate(4deg);
+      left: 50%;
+      transform: translateX(-50%) rotate(4deg);
       z-index: 2;
     }
 
@@ -168,14 +168,6 @@
         max-width: 380px;
         height: auto;
         aspect-ratio: 882/612;
-      }
-
-      .screenshot-frame.back {
-        left: 6vw;
-      }
-
-      .screenshot-frame.front {
-        left: 2vw;
       }
     }
 
@@ -229,10 +221,10 @@
     }
 
     .feature {
-        background: var(--card);
-        padding: 30px 20px;
-        border-radius: 12px;
-        box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
+      background: var(--card);
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
     }
 
     .feature h3 {
@@ -268,9 +260,6 @@
         max-width: 400px;
         margin: 0 auto;
         text-align: justify;
-      }
-
-      .feature {
       }
     }
 
@@ -337,8 +326,8 @@
       Download for Windows
     </a>
     <p class="fine-print">Free · Windows 10 &amp; 11 · <a href="#">release notes</a></p>
-    <p class="fine-print">By downloading, you agree to the <a href="terms.html">Terms of Service</a> and <a
-        href="privacy.html">Privacy Policy</a>.</p>
+    <p class="fine-print">By downloading, you agree to the <a href="terms/">Terms of Service</a> and <a
+        href="privacy/">Privacy Policy</a>.</p>
   </section>
 
   <section class="wrap features">
@@ -398,7 +387,7 @@
 
   <footer class="wrap">
     <div class="legal-links">
-      <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>·<a
+      <a href="privacy/">Privacy Policy</a>·<a href="terms/">Terms of Service</a>·<a
         href="https://discord.gg/F8ZHvA9Z5C" target="_blank" rel="noopener">Discord</a>
     </div>
     Lotus created with ❤ by Allen Lambert Jr
@@ -411,7 +400,7 @@
     // lotus blooms.
     document.getElementById('download-btn').addEventListener('click', function () {
       window.setTimeout(function () {
-        window.location.href = 'thank-you.html';
+        window.location.href = 'thank-you/';
       }, 600);
     });
   </script>
