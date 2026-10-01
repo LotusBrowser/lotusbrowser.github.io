@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lotus - a calmer way to browse</title>
+  <title>Sponsored Projects - Lotus</title>
   <link rel="icon" href="assets/icon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap"
@@ -69,6 +69,7 @@
       font-weight: 600;
       font-size: 20px;
       color: var(--rose-deep);
+      text-decoration: none;
     }
 
     .wordmark img {
@@ -212,51 +213,77 @@
       color: var(--rose-deep);
     }
 
-    /* ---------- features ---------- */
-    .features {
+    /* ---------- projects ---------- */
+    .projects {
       padding: 90px 0 60px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 40px 36px;
     }
 
-    .feature {
+    .project {
         background: var(--card);
         padding: 30px 20px;
         border-radius: 12px;
         box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
     }
 
-    .feature h3 {
+    .project h3 {
       font-family: "Fraunces", serif;
       font-weight: 500;
       font-size: 18px;
+      text-align: center;
       color: var(--rose-deep);
       margin: 0 0 8px;
     }
 
-    .feature p {
+    .project p {
       margin: 0;
       font-size: 14px;
       color: var(--plum-soft);
     }
 
-    .feature .icon {
-      width: 30px;
-      height: 30px;
+    .project .links {
+      margin-top: 14px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .project .links a {
+      color: var(--rose);
+      transition: color 0.15s ease;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .project .links a:hover {
+      color: var(--plum);
+    }
+
+    .project .icon {
+      width: 128px;
+      height: 128px;
+      border-radius: 12px;
+      border: 1px solid var(--chrome);
+      box-shadow: 0 14px 28px -14px rgba(138, 41, 70, 0.55);
       margin-bottom: 14px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
       color: var(--rose);
     }
 
     @media (max-width: 680px) {
-      .features {
+      .projects {
         grid-template-columns: 1fr;
         gap: 30px;
         padding: 0 60px 40px;
         text-align: center;
       }
 
-      .feature p {
+      .project p {
         max-width: 400px;
         margin: 0 auto;
         text-align: justify;
@@ -295,93 +322,28 @@
 
   <header class="site">
     <div class="wrap site-nav">
-      <div class="wordmark">
+      <a class="wordmark" href="/">
         <img src="assets/icon.ico" alt="">
         Lotus
-      </div>
+      </a>
       <a class="nav-link" href="/sponsor.html">Sponsored Projects</a>
     </div>
   </header>
 
   <section class="hero wrap">
-    <h1>A browser that stays out<br>of your way.</h1>
-    <p class="sub">Lotus is a fast, quiet browser for Windows - tabs, bookmarks and downloads, without the clutter.
-      Searches run on DuckDuckGo, so they aren't tracked back to you.</p>
-
-    <div class="screenshot-stack">
-      <div class="screenshot-frame back">
-        <img src="assets/screenshot-settings.png"
-          alt="Lotus settings page showing bookmarks bar, tracker blocking, HTTPS-only mode and pop-up blocking toggles">
-      </div>
-      <div class="screenshot-frame front">
-        <img src="assets/screenshot-newtab.png" alt="Lotus new tab page with the DuckDuckGo-powered search box">
-      </div>
-    </div>
-    <p class="screenshot-caption">New tab search and privacy settings, both built in</p>
+    <h1>Sponsored Projects</h1>
+    <p class="sub">Projects that the Developer of Lotus is a sponsor of. <b>Projects are not affiliated with Lotus, and the Developer of Lotus does not receive any revenue from them.</b></p>
   </section>
 
-  <section class="cta" id="download">
-    <a class="download-btn" id="download-btn" href="versions/Lotus.Installer.exe" download>
-      <img src="assets/icon.ico" alt="">
-      Download for Windows
-    </a>
-    <p class="fine-print">Free · Windows 10 &amp; 11 · <a href="#">release notes</a></p>
-    <p class="fine-print">By downloading, you agree to the <a href="terms.html">Terms of Service</a> and <a
-        href="privacy.html">Privacy Policy</a>.</p>
-  </section>
+  <section class="wrap projects">
+    <div class="project">
+      <img class="icon" src="https://cdn.discordapp.com/icons/1375493762549157898/ed11c11980807420911bd729b933387d.webp?size=1024" alt="">
+      <h3>Clash of Power</h3>
+      <p>Clash of Power is a Dragon Ball Z-inspired role-playing Discord server.</p>
 
-  <section class="wrap features">
-    <div class="feature">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <rect x="3" y="6" width="7" height="5" rx="1.5" />
-        <rect x="11" y="6" width="7" height="5" rx="1.5" />
-        <path d="M3 15h18" />
-      </svg>
-      <h3>Tabs that stay organized</h3>
-      <p>Drag to reorder tabs, and every link opens in the window you already have - Lotus never spawns a second copy of
-        itself.</p>
-    </div>
-    <div class="feature">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M12 3l7 3v6c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V6l7-3z" />
-      </svg>
-      <h3>Search without the tracking</h3>
-      <p>The address bar and new tab page search with DuckDuckGo, and known tracker domains are blocked automatically
-        wherever you browse.</p>
-    </div>
-    <div class="feature">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M12 3v12" />
-        <path d="M7 10l5 5 5-5" />
-        <path d="M4 19h16" />
-      </svg>
-      <h3>Downloads shelf</h3>
-      <p>Files land in a Chrome-style shelf at the bottom of the window, with live progress instead of a popup.</p>
-    </div>
-    <div class="feature">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z" />
-      </svg>
-      <h3>Bookmarks &amp; history</h3>
-      <p>Star a page to pin it to the bookmarks bar, and jump back to anything you've visited from a searchable history
-        panel.</p>
-    </div>
-    <div class="feature">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <circle cx="11" cy="11" r="7" />
-        <path d="M21 21l-4.3-4.3" />
-      </svg>
-      <h3>Find in page &amp; zoom</h3>
-      <p>Search text on the current page, zoom in or out, and reach view-source or dev tools when you need them.</p>
-    </div>
-    <div class="feature">
-      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <rect x="3" y="4" width="18" height="14" rx="2" />
-        <path d="M8 21h8M12 18v3" />
-      </svg>
-      <h3>Set it as your default</h3>
-      <p>Register Lotus as a browser option in Windows settings, and it'll ask for permission before a site can use your
-        camera, mic or location.</p>
+      <div class="links">
+        <a href="https://discord.gg/YmyjvGTAkz" target="_blank" rel="noopener">Clash of Power - Discord</a>
+      </div>
     </div>
   </section>
 
@@ -395,14 +357,7 @@
 
 
   <script>
-    // Let the browser start the .exe download (native `download` attribute
-    // behavior), then carry the visitor to the thank-you page where the
-    // lotus blooms.
-    document.getElementById('download-btn').addEventListener('click', function () {
-      window.setTimeout(function () {
-        window.location.href = 'thank-you.html';
-      }, 600);
-    });
+    
   </script>
 </body>
 
